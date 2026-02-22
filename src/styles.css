@@ -1,0 +1,81 @@
+/*
+  This custom CSS provides a subtle, animated background effect
+  that mimics a shifting gradient, enhancing the premium feel.
+*/
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-[#0A0A0A] text-neutral-200 font-sans; /* Base dark background and text */
+  }
+}
+
+/*
+  Animated background for the entire page.
+  Uses a large linear gradient with background-size and animation
+  to create a slow, subtle, shifting color effect.
+*/
+.animated-gradient-bg {
+  position: relative;
+  overflow: hidden;
+  /* Define a large, evolving gradient with green/blue tones */
+    background: linear-gradient(
+    -45deg,
+    #0A0A0A, /* Base dark */
+    #1a1024, /* Dark violet */
+    #241010, /* Dark brick red */
+    #101024  /* Dark deep blue */
+  );
+  background-size: 400% 400%; /* Make the gradient larger than the viewport */
+  animation: gradientShift 15s ease infinite; /* Slow, smooth, infinite shift */
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/*
+  Optional subtle dot grid pattern overlay for added texture.
+  Can be enabled by adding 'dot-grid-overlay' to a container.
+*/
+.dot-grid-overlay {
+  position: relative;
+  z-index: 1; /* Ensure content is above the overlay */
+}
+
+.dot-grid-overlay::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 20px 20px;
+  opacity: 0.2; /* Subtle opacity */
+  z-index: -1; /* Position behind content */
+}
+
+/* Global button focus styles */
+button:focus-visible {
+  outline: 2px solid rgba(139, 92, 246, 0.6); /* Tailwind's indigo-400 equivalent */
+  outline-offset: 2px;
+  border-radius: 9999px; /* For rounded buttons */
+}
+
