@@ -62,8 +62,8 @@ export default function HomePage() {
           variants={containerVariants}
           className="text-center mb-24 md:mb-32"
         >
-                    <motion.h1 variants={itemVariants} className="text-6xl md:text-8xl font-extrabold tracking-tighter leading-tight mb-6 bg-gradient-to-r from-blue-500 via-violet-500 to-red-500 text-transparent bg-clip-text">
-            Build Something <br className="hidden md:block" /> Cool.
+                              <motion.h1 variants={itemVariants} className="text-6xl md:text-8xl font-extrabold tracking-tighter leading-tight mb-6 bg-gradient-to-r from-blue-500 via-violet-500 to-red-500 text-transparent bg-clip-text">
+            Build Something <br className="hidden md:block" /> Today.
           </motion.h1>
           <motion.p variants={itemVariants} className="text-lg md:text-xl text-neutral-400 max-w-3xl mx-auto mb-10 font-light leading-relaxed">
             The future of development is here. Unleash your potential with tools designed for speed, scale, and seamless integration.
